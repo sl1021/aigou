@@ -1,0 +1,15 @@
+server:
+  port: 9001 #端口
+spring:
+  application:
+    name: AIGOU-ZUUL
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka #注册中心的地址
+zuul:
+  routes:
+    employee-provider: /login/**  #添加路径
+  ignored-services: "*"  #忽略的路径
+  prefix: /aigou    #需要添加前缀
+
